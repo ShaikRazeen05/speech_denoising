@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Denoising App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <video id="background-video" autoplay loop muted>
+        <source src="{{ url_for('static', filename='background.mp4') }}" type="video/mp4">
+        Your browser does not support the video element.
+    </video>
+    <div class="container">
+        <div class="header">
+            <h1>Speech Denoising App</h1>
+        </div>
+        <form class="form" id="upload-form">
+            <div class="file-input-container">
+                <input type="file" id="fileInput" accept=".wav">
+            </div>
+            <button id="upload-btn" type="submit">Upload and Denoise</button>
+        </form>
+        <div class="audio-container">
+            <h3>Original Audio</h3>
+            <audio class="audio-element" id="original-audio-element" controls>
+                <source id="original-audio-source" src="" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+            <h3>Denoised Audio</h3>
+            <audio class="audio-element" id="denoised-audio-element" controls>
+                <source id="denoised-audio-source" src="" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
